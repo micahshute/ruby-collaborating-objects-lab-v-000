@@ -10,13 +10,11 @@ class Artist
   def self.new_by_filename(file)
     data = file.split("/").last
     artist = data.split(" - ")[0].strip
-    binding.pry
     Artist.find_or_create_by_name(artist)
   end
 
   def self.find_or_create_by_name(name)
     artist = @@all.find{|artist| artist.name == name}
-    binding.pry
     !!artist ? artist : Artist.new(name)
   end
 
