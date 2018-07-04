@@ -15,7 +15,6 @@ class MP3Importer
         song = Song.new(song_title)
         artist = Artist.new_by_filename(data)
         artist.add_song(song)
-        artist.save
       end
   end
 
